@@ -316,10 +316,10 @@ class RichText
                         'rel' => 'noopener',
                     ], $attributes);
                 }
-                if ($element->data->link_type === 'Document') {
+                if ($element->data->type === 'Link.document') {
                     $attributes['href'] = $linkResolver ? $linkResolver($element->data) : '';
                 } else {
-                    $attributes['href'] = $element->data->url;
+                    $attributes['href'] = $element->data->value->url;
                 }
                 if ($attributes['href'] === null) {
                     // We have no link (LinkResolver said it is not valid,
