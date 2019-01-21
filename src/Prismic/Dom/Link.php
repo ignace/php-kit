@@ -17,7 +17,7 @@ class Link
      */
     public static function asUrl($link, $linkResolver = null)
     {
-        if ($link->link_type === 'Document') {
+        if ($link->type === 'Document') {
             return $linkResolver ? $linkResolver($link) : null;
         }
 
